@@ -1,30 +1,26 @@
 import sys
 class oddTimeNumberOccurance:
     def getOddOccurrence(self,arr, arr_size):
-        for i in range(0, arr_size):
+        """iterate over the array to check the number count occur even or odd times if there is no number occure odd time return -1"""
+        for idx1 in range(0, arr_size):
             count = 0
-            for j in range(0, arr_size):
-                if arr[i] == arr[j]:
+            for idx2 in range(0, arr_size):
+                if arr[idx1] == arr[idx2]:
                     count += 1
 
             if (count % 2 != 0):
-                return arr[i]
-
+                return arr[idx1]
         return -1
 
-    # def readFromfile(self,filename):
-    #     sys.stdin = open('test.txt', 'r')
-    #     line = infile.readline()
-    #     return line
-#
-#
+
+
 # # driver code
 if __name__ == "__main__":
     arr=[]
     inputs=[]
-
-    # print(sys.stdin)
-    for i in range(2):
+    sys.stdin = open('test.txt', 'r')
+    """reading the input from the file and call the function to perform on the array"""
+    for i in range(5):
         inputs = input()
         for val in inputs:
             if val!=' ' and val!='\n':
